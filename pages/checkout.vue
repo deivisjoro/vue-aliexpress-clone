@@ -114,9 +114,10 @@
         }
         else{
             await createOrder(result.paymentIntent.id);
-            userStore.cart = [];
-            userStore.checkout = [];
+            
             setTimeout(()=>{
+                userStore.cart = [];
+                userStore.checkout = [];
                 navigateTo('/success');
             }, 500)
         }
